@@ -24,4 +24,8 @@ select title from movies where myear>1997;
 select title from movies where directer="Hanson" and myear>1997;
 Select title,rating from movies;
 Select actor "actors "  from actors union select director  "Directer " from directors;
-select movies.title where directer
+#create view acdir as
+#select actor from actors 
+#select movies.title where directer
+select distinct movies.directer,acts.actor from movies  join acts on movies.title=acts.title;
+select title from acts where actor="McDormand" and title in (select title from movies where directer="coen");
